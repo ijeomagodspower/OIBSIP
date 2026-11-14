@@ -192,3 +192,10 @@ h1, h2, h3 { font-family: var(--heading); line-height: 1.12; letter-spacing: -1.
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }
 }
+.photo-placeholder { font: 700 12px var(--body) !important; letter-spacing: 2px !important; color: #dff8ff !important; }
+.text-link { display:inline-flex; align-items:center; gap:7px; color:#9edfff; font-size:11px; font-weight:600; padding:10px 0; }
+.text-link svg { width:14px; height:14px; }
+.contact-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:11px; }
+.contact-email { display:inline-block; margin-top:20px; color:#c5eafa; font-size:11px; }
+.footer-socials { display:flex; align-items:center; gap:16px; }
+@media (max-width:650px) { .hero-actions .text-link { justify-content:center; } .contact-actions { flex-direction:column; align-items:stretch; max-width:280px; margin-inline:auto; } .footer-socials { order:3; } }
