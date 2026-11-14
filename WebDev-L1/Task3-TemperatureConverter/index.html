@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fffaf6">
-  <meta name="description" content="A simple, precise temperature converter. Convert Celsius, Fahrenheit and Kelvin instantly with Tempo.">
-  <title>Tempo — Temperature Converter</title>
+  <meta name="theme-color" content="#07112f">
+  <meta name="description" content="Convert Celsius, Kelvin, Fahrenheit and Rankine instantly as you type with Tempo.">
+  <title>Tempo — Live Temperature Converter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,130 +13,76 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/script.js" defer></script>
 </head>
-<body>
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="brand" href="#" aria-label="Tempo home">
-        <span class="brand-mark"><i data-lucide="thermometer-sun"></i></span>
-        <span>tempo<span class="brand-dot">.</span></span>
+<body class="converter-app">
+  <main class="app-frame">
+    <header class="app-header">
+      <a class="app-menu" href="#converter" aria-label="Go to converter"><i data-lucide="menu"></i></a>
+      <a class="app-brand" href="#" aria-label="Tempo home">
+        <span class="app-brand-icon"><i data-lucide="thermometer"></i></span>
+        <span><strong>Tempo</strong><small>Temperature Converter</small></span>
       </a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#converter">Converter</a>
-        <a href="#how-it-works">How it works</a>
-      </nav>
-      <a class="header-link" href="#converter">Try it now <i data-lucide="arrow-up-right"></i></a>
+      <button class="app-info" id="info-button" type="button" aria-label="About temperature conversion"><i data-lucide="info"></i></button>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="eyebrow"><span class="eyebrow-dot"></span> SIMPLE. FAST. PRECISE.</div>
-        <h1 id="hero-title">A better way to<br><span>read temperature.</span></h1>
-        <p class="hero-copy">Convert between Celsius, Fahrenheit and Kelvin with a clean, straightforward tool that gives you the numbers you need.</p>
-        <a class="hero-link" href="#converter">Start converting <i data-lucide="arrow-down"></i></a>
-        <div class="hero-decoration decoration-one"></div>
-        <div class="hero-decoration decoration-two"></div>
-        <div class="sparkle sparkle-one">✳</div>
-        <div class="sparkle sparkle-two">✳</div>
-      </section>
+    <section class="app-intro" id="converter">
+      <span class="intro-kicker">LIVE CONVERSION</span>
+      <h1>Get Started</h1>
+      <p>Temperature Conversions with Ease</p>
+    </section>
 
-      <section class="converter-section" id="converter" aria-labelledby="converter-title">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">THE CONVERTER</span>
-            <h2 id="converter-title">Make the switch.</h2>
-          </div>
-          <span class="live-indicator"><span></span> Ready when you are</span>
+    <section class="converter-panel" aria-label="Live temperature converter">
+      <div class="unit-field unit-celsius">
+        <label for="celsius">Celsius <span class="unit-mark">°C</span></label>
+        <div class="unit-input-wrap">
+          <input id="celsius" data-unit="celsius" type="text" inputmode="decimal" autocomplete="off" placeholder="Enter Value" aria-describedby="form-message">
+          <span>°C</span>
         </div>
+      </div>
 
-        <div class="converter-card">
-          <div class="converter-topline">
-            <div class="converter-icon"><i data-lucide="thermometer"></i></div>
-            <div>
-              <h3>Temperature converter</h3>
-              <p>Choose a unit, enter a value, and convert.</p>
-            </div>
-            <span class="card-label">01 / CONVERT</span>
-          </div>
-
-          <form id="converter-form" novalidate>
-            <div class="input-grid">
-              <label class="field-group" for="temperature">
-                <span class="field-label">Temperature value</span>
-                <div class="temperature-input-wrap">
-                  <input id="temperature" name="temperature" type="text" inputmode="decimal" autocomplete="off" placeholder="Enter a number" value="25" aria-describedby="form-message">
-                  <span class="input-symbol" aria-hidden="true">°</span>
-                </div>
-              </label>
-              <label class="field-group" for="from-unit">
-                <span class="field-label">Convert from</span>
-                <span class="select-wrap">
-                  <select id="from-unit" name="from-unit">
-                    <option value="celsius">Celsius (°C)</option>
-                    <option value="fahrenheit">Fahrenheit (°F)</option>
-                    <option value="kelvin">Kelvin (K)</option>
-                  </select>
-                  <i data-lucide="chevron-down"></i>
-                </span>
-              </label>
-            </div>
-
-            <p class="form-message" id="form-message" role="alert" aria-live="polite"></p>
-            <div class="form-actions">
-              <button class="convert-button" type="submit">Convert temperature <i data-lucide="arrow-right"></i></button>
-              <button class="reset-button" type="button" id="reset-button"><i data-lucide="rotate-ccw"></i> Reset</button>
-            </div>
-          </form>
-
-          <div class="results-area" aria-live="polite" aria-label="Converted temperatures">
-            <div class="results-heading">
-              <div>
-                <span class="section-kicker">YOUR RESULTS</span>
-                <h3>Here’s the conversion.</h3>
-              </div>
-              <span class="result-status" id="result-status"><i data-lucide="check-circle-2"></i> Converted</span>
-            </div>
-            <div class="result-grid">
-              <article class="result-card result-primary" data-result="celsius">
-                <div class="result-card-top"><span>Celsius</span><span class="unit-pill">°C</span></div>
-                <strong id="result-celsius">25.00<span>°C</span></strong>
-                <small>Degrees Celsius</small>
-              </article>
-              <article class="result-card" data-result="fahrenheit">
-                <div class="result-card-top"><span>Fahrenheit</span><span class="unit-pill">°F</span></div>
-                <strong id="result-fahrenheit">77.00<span>°F</span></strong>
-                <small>Degrees Fahrenheit</small>
-              </article>
-              <article class="result-card" data-result="kelvin">
-                <div class="result-card-top"><span>Kelvin</span><span class="unit-pill">K</span></div>
-                <strong id="result-kelvin">298.15<span>K</span></strong>
-                <small>Kelvin scale</small>
-              </article>
-            </div>
-            <p class="result-footnote"><i data-lucide="info"></i> Results are rounded to 2 decimal places. Calculations use full precision.</p>
-          </div>
+      <div class="unit-field unit-kelvin">
+        <label for="kelvin">Kelvin <span class="unit-mark">K</span></label>
+        <div class="unit-input-wrap">
+          <input id="kelvin" data-unit="kelvin" type="text" inputmode="decimal" autocomplete="off" placeholder="Enter Value" aria-describedby="form-message">
+          <span>K</span>
         </div>
-      </section>
+      </div>
 
-      <section class="how-section" id="how-it-works">
-        <div class="how-intro">
-          <span class="section-kicker">NO GUESSWORK</span>
-          <h2>Three scales.<br><span>One simple tool.</span></h2>
-          <p>Different places and fields use different temperature scales. Tempo makes switching between them easy.</p>
+      <div class="unit-field unit-fahrenheit">
+        <label for="fahrenheit">Fahrenheit <span class="unit-mark">°F</span></label>
+        <div class="unit-input-wrap">
+          <input id="fahrenheit" data-unit="fahrenheit" type="text" inputmode="decimal" autocomplete="off" placeholder="Enter Value" aria-describedby="form-message">
+          <span>°F</span>
         </div>
-        <div class="scale-list">
-          <article class="scale-item"><span class="scale-symbol celsius-symbol">°C</span><div><h3>Celsius</h3><p>Commonly used around the world for everyday temperatures.</p></div><i data-lucide="arrow-up-right"></i></article>
-          <article class="scale-item"><span class="scale-symbol fahrenheit-symbol">°F</span><div><h3>Fahrenheit</h3><p>Used for everyday weather and temperature readings in the United States.</p></div><i data-lucide="arrow-up-right"></i></article>
-          <article class="scale-item"><span class="scale-symbol kelvin-symbol">K</span><div><h3>Kelvin</h3><p>The standard temperature scale used in many scientific contexts.</p></div><i data-lucide="arrow-up-right"></i></article>
-        </div>
-      </section>
-    </main>
+      </div>
 
-    <footer class="site-footer">
-      <a class="brand footer-brand" href="#"><span class="brand-mark"><i data-lucide="thermometer-sun"></i></span><span>tempo<span class="brand-dot">.</span></span></a>
-      <p>Clear conversions. No complications.</p>
-      <span class="footer-note">OIBSIP · WEB DEVELOPMENT · TASK 3</span>
+      <div class="unit-field unit-rankine">
+        <label for="rankine">Rankine <span class="unit-mark">°R</span></label>
+        <div class="unit-input-wrap">
+          <input id="rankine" data-unit="rankine" type="text" inputmode="decimal" autocomplete="off" placeholder="Enter Value" aria-describedby="form-message">
+          <span>°R</span>
+        </div>
+      </div>
+
+      <p class="form-message" id="form-message" role="alert" aria-live="polite"></p>
+
+      <div class="tool-actions" aria-label="Converter actions">
+        <button type="button" id="reset-button" aria-label="Clear all values" title="Clear all"><i data-lucide="trash-2"></i></button>
+        <button type="button" id="copy-button" aria-label="Copy all conversions" title="Copy results"><i data-lucide="copy"></i></button>
+        <button type="button" id="download-button" aria-label="Download conversion results" title="Download results"><i data-lucide="download"></i></button>
+      </div>
+      <p class="action-feedback" id="action-feedback" aria-live="polite"></p>
+    </section>
+
+    <aside class="info-note" id="info-note" hidden>
+      <i data-lucide="lightbulb"></i>
+      <p>Type a value into any scale. The other three temperatures update instantly. You can edit any field to convert in the opposite direction.</p>
+    </aside>
+
+    <footer class="app-footer">
+      <span>FOUR SCALES. ONE SIMPLE CONVERTER.</span>
+      <span>POWERED BY TEMPO</span>
     </footer>
-  </div>
+  </main>
   <script>if (window.lucide) lucide.createIcons();</script>
 </body>
 </html>
