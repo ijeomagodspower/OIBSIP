@@ -1,27 +1,32 @@
 # OIBSIP — Web Development Level 1, Task 3
 
-A responsive temperature converter built with HTML, CSS and vanilla JavaScript.
+Tempo is a responsive, live temperature converter.
 
 ## Features
-- Convert between Celsius, Fahrenheit and Kelvin
-- Select the input temperature scale
-- Display all three converted values together
-- Validate empty and non-numeric input
-- Reject temperatures below absolute zero for the selected scale
-- Reset the converter and clear displayed results
-- Responsive layout for desktop, tablet and mobile
-- Sora headings, DM Sans supporting text, orange/white/black palette
-- Lucide icons
+- Instantly converts while the user types; no Convert button required
+- Four editable scales: Celsius, Kelvin, Fahrenheit and Rankine
+- Editing any field updates the other three fields
+- Numeric input validation and user-friendly error messages
+- Absolute-zero validation for every scale
+- Clear, copy and download actions
+- Responsive mobile-first interface
+
+## Conversion approach
+All values are converted through Kelvin as the common base:
+- Celsius to Kelvin: K = °C + 273.15
+- Fahrenheit to Kelvin: K = (°F + 459.67) × 5/9
+- Rankine to Kelvin: K = °R × 5/9
+- Kelvin to Rankine: °R = K × 9/5
 
 ## Tech stack
 - HTML5
-- CSS3 (Flexbox, Grid, gradients and media queries)
+- CSS3
 - Vanilla JavaScript
-- Google Fonts: Sora and DM Sans
+- Sora headings and DM Sans supporting text
 - Lucide icons
 
 ## Run locally
-Open `index.html` in your browser. An internet connection is used to load Google Fonts and Lucide icons.
+Open index.html in a browser.
 
 ## Submission path
-`OIBSIP/WebDev-L1/Task3-TemperatureConverter/`
+OIBSIP/WebDev-L1/Task3-TemperatureConverter/
