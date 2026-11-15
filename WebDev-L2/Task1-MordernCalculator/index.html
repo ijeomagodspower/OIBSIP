@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3f3f4">
+  <meta name="description" content="A clean, responsive calculator with light and dark themes.">
+  <title>Modern Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <main class="stage">
+    <section class="calculator" aria-label="Calculator">
+      <div class="status-bar" aria-hidden="true"><span>9:41</span><span class="status-icons"><i></i><i></i><i></i></span></div>
+
+      <div class="theme-switch" role="group" aria-label="Choose calculator theme">
+        <button class="theme-button active" id="light-theme" type="button" aria-label="Light theme" aria-pressed="true"><span aria-hidden="true">☼</span></button>
+        <button class="theme-button" id="dark-theme" type="button" aria-label="Dark theme" aria-pressed="false"><span aria-hidden="true">☾</span></button>
+      </div>
+
+      <section class="display" aria-live="polite" aria-atomic="true">
+        <p class="expression" id="expression"> </p>
+        <output class="result" id="result" aria-label="Calculator display">0</output>
+        <p class="display-error" id="display-error" role="alert"></p>
+      </section>
+
+      <section class="keypad" aria-label="Calculator keys">
+        <button class="key key-action" data-action="clear" type="button">AC</button>
+        <button class="key key-action" data-action="sign" type="button" aria-label="Toggle sign">+/−</button>
+        <button class="key key-action" data-action="percent" type="button">%</button>
+        <button class="key key-operator" data-operator="/" type="button" aria-label="Divide">÷</button>
+
+        <button class="key" data-number="7" type="button">7</button>
+        <button class="key" data-number="8" type="button">8</button>
+        <button class="key" data-number="9" type="button">9</button>
+        <button class="key key-operator" data-operator="*" type="button" aria-label="Multiply">×</button>
+
+        <button class="key" data-number="4" type="button">4</button>
+        <button class="key" data-number="5" type="button">5</button>
+        <button class="key" data-number="6" type="button">6</button>
+        <button class="key key-operator" data-operator="-" type="button" aria-label="Subtract">−</button>
+
+        <button class="key" data-number="1" type="button">1</button>
+        <button class="key" data-number="2" type="button">2</button>
+        <button class="key" data-number="3" type="button">3</button>
+        <button class="key key-operator" data-operator="+" type="button" aria-label="Add">+</button>
+
+        <button class="key key-action" data-action="backspace" type="button" aria-label="Delete last character">↶</button>
+        <button class="key" data-number="0" type="button">0</button>
+        <button class="key" data-action="decimal" type="button">.</button>
+        <button class="key key-equals" data-action="equals" type="button">=</button>
+      </section>
+      <div class="home-indicator" aria-hidden="true"><span></span></div>
+    </section>
+    <p class="stage-caption">A little clarity in every calculation.</p>
+  </main>
+</body>
+</html>
