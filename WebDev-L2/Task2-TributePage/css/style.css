@@ -92,7 +92,7 @@ img {
   display: flex;
   justify-content: space-between;
   color: #858181;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.18em;
 }
@@ -241,7 +241,7 @@ h2 {
 .legacy-content > div > p {
   margin: 0 0 19px;
   color: #bcb8b8;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 2.05;
 }
 .bio-copy i {
