@@ -58,7 +58,7 @@ img {
 }
 .main-nav a,
 .header-link {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
@@ -108,7 +108,7 @@ img {
   align-items: center;
   gap: 12px;
   color: var(--red);
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.2em;
 }
@@ -241,7 +241,7 @@ h2 {
 .legacy-content > div > p {
   margin: 0 0 19px;
   color: #bcb8b8;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 2.05;
 }
 .bio-copy i {
