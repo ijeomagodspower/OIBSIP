@@ -7,7 +7,7 @@
   --muted: #a6a3a3;
   --line: rgba(255,255,255,.16);
   --display: "Bodoni Moda", Georgia, serif;
-  --body: "Manrope", Arial, sans-serif;
+  --body: "Times New Roman", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
