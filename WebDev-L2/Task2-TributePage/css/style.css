@@ -385,7 +385,9 @@ h2 {
   filter: saturate(0.8);
 }
 .gallery-card-small img {
-  height: 260px;
+  height: 360px;
+  object-fit: cover;
+  background-position: top center;
 }
 .gallery-card figcaption {
   display: flex;
