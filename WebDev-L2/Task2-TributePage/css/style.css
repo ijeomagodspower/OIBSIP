@@ -382,6 +382,7 @@ h2 {
 .gallery-card img {
   height: 360px;
   object-fit: cover;
+  object-position: top center;
   filter: saturate(0.8);
 }
 .gallery-card-small img {
